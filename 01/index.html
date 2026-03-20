@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 친구와 함께 떠나는 고전 문학 탐험</title>
+  <title>필수 고전문학 완벽 요약!</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons CDN -->
@@ -22,9 +22,9 @@
 <body class="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-blue-200">
 
   <!-- Header -->
-  <header class="relative bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200 p-6 md:p-8 shadow-sm text-center rounded-b-3xl">
+  <header class="relative bg-gradient-to-r from-emerald-200 via-teal-200 to-cyan-200 p-6 md:p-8 shadow-sm text-center rounded-b-3xl">
     
-    <!-- 홈 버튼 추가 -->
+    <!-- 홈 버튼 -->
     <div class="flex justify-start mb-6 md:absolute md:top-8 md:left-8 md:mb-0">
       <a href="../index.html" class="flex items-center gap-2 bg-white/60 hover:bg-white text-slate-800 px-4 py-2 rounded-xl font-bold transition-all shadow-sm hover:shadow-md">
         <i data-lucide="home" class="w-5 h-5"></i>
@@ -33,10 +33,10 @@
     </div>
 
     <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2 drop-shadow-sm">
-      AI 친구와 함께 떠나는 고전 문학 탐험! 🚀
+      교과서 단골손님! 필수 고전문학 요약 📚
     </h1>
-    <p class="text-lg text-slate-700 font-medium">
-      <span class="bg-white/50 px-3 py-1 rounded-full">챗GPT 가상 멘토와 함께 고전시가 진짜 내 것으로 만들기</span>
+    <p class="text-lg text-slate-700 font-medium mt-3">
+      <span class="bg-white/60 px-4 py-1.5 rounded-full">중고등학생이 가장 많이 찾는 베스트셀러 4선 완전 정복</span>
     </p>
   </header>
 
@@ -49,150 +49,139 @@
     <!-- Content Area -->
     <div class="bg-white rounded-3xl shadow-xl p-6 md:p-10 border border-slate-100 min-h-[400px]">
       
-      <!-- 1. 연구 개요 -->
-      <div id="section-intro" class="tab-content space-y-6 animate-fadeIn">
+      <!-- 1. 홍길동전 -->
+      <div id="section-hong" class="tab-content space-y-6 animate-fadeIn">
         <div class="flex flex-col md:flex-row gap-8 items-center">
           <div class="flex-1 space-y-4">
-            <h2 class="text-2xl font-bold border-b-4 border-pink-300 inline-block pb-1">왜 이 실험을 했을까요? 🤔</h2>
-            <p class="text-lg leading-relaxed">
-              고전문학, 수능 때문에 억지로 외우기만 했나요? 작품을 읽고 내 나름대로 상상해 봐도, 결국 <strong>"정답(참고서 해석)"</strong>만 외워야 해서 답답했을 거예요.
-            </p>
-            <p class="text-lg leading-relaxed">
-              그래서 서울대 연구팀이 <strong>'나만의 AI 고전문학 멘토'</strong>를 만들었어요! 선생님 눈치 볼 필요 없이, AI랑 카톡하듯 묻고 답하면서 진짜 '내 생각'을 키워보는 재미있는 실험이랍니다.
-            </p>
-            <div class="bg-slate-100 p-4 rounded-xl text-sm text-slate-600 mt-4">
-              <strong>📝 연구 출처:</strong> 정은선, 송미지, 고정희 (2025). 문학교육학 제88호.<br/>
-              <strong>🔑 키워드:</strong> 가상 멘토, 챗GPT, 도산십이곡, 내 맘대로 해석하기
+            <h2 class="text-3xl font-bold border-b-4 border-red-400 inline-block pb-1">홍길동전 🥷</h2>
+            <p class="text-xl font-semibold text-slate-600">"조선시대 최초의 K-히어로 사이다 액션!"</p>
+            
+            <div class="bg-red-50 p-5 rounded-2xl border border-red-100 mt-4">
+              <ul class="space-y-3 text-lg">
+                <li><strong class="text-red-700">핵심 줄거리:</strong> "아버지를 아버지라 부르지 못하고..." 서얼(첩의 자식)로 태어나 차별받던 길동이가 집을 나와 도적 떼 '활빈당'의 우두머리가 됩니다. 탐관오리를 혼내주고 빈민을 구제하다가, 결국 자신만의 이상 국가인 '율도국'을 세워 왕이 되는 이야기!</li>
+                <li><strong class="text-red-700">기억할 포인트:</strong> 적서차별 타파 (신분제 비판), 탐관오리 징벌, 이상 국가 건설</li>
+                <li><strong class="text-red-700">저자:</strong> 허균 (최초의 한글 소설)</li>
+              </ul>
             </div>
 
-            <!-- 새로 추가된 인포그래픽 보기 버튼 -->
+            <!-- 팝업 열기 버튼 -->
             <div class="mt-6">
-              <button onclick="openModal()" class="flex items-center justify-center w-full md:w-auto gap-2 bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-2xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                <i data-lucide="image" class="w-5 h-5"></i> 인포그래픽 보기
+              <button onclick="openModal('hong_image.jpg', '홍길동전')" class="flex items-center justify-center w-full md:w-auto gap-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-2xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                <i data-lucide="image" class="w-5 h-5"></i> 이미지 크게 보기
               </button>
             </div>
           </div>
-          <div class="flex-1 flex justify-center">
-             <!-- 업로드된 이미지 표시 -->
-            <div class="bg-gradient-to-tr from-green-100 to-blue-100 p-2 rounded-3xl shadow-lg">
-               <img 
-                 src="unnamed.png" 
-                 alt="AI 친구와 함께 떠나는 고전 문학 탐험" 
-                 class="rounded-2xl max-w-full h-auto object-cover"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-               />
-               <div class="hidden text-center p-8 text-slate-500">
-                 <i data-lucide="message-circle" class="w-16 h-16 mx-auto mb-4 text-pink-300"></i>
-                 이미지를 불러올 수 없습니다.<br/>(unnamed.png)
-               </div>
+          <div class="md:w-1/3 flex justify-center cursor-pointer transform transition hover:scale-105" onclick="openModal('hong_image.jpg', '홍길동전')">
+            <img src="hong_image.jpg" alt="홍길동전 이미지" class="rounded-2xl shadow-lg object-cover w-full h-64" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- 이미지 로드 실패 시 대체 UI -->
+            <div class="hidden flex-col items-center justify-center bg-red-100 border-2 border-dashed border-red-300 w-full h-64 rounded-2xl text-red-500 p-4 text-center shadow-lg">
+              <i data-lucide="swords" class="w-12 h-12 mb-2"></i>
+              <span class="font-bold"></span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 2. 이론적 배경 -->
-      <div id="section-background" class="tab-content hidden space-y-8 animate-fadeIn">
-        <h2 class="text-2xl font-bold border-b-4 border-indigo-300 inline-block pb-1">AI 멘토, 뭐가 좋을까요? ✨</h2>
-        <div class="grid md:grid-cols-3 gap-6 mt-6">
-          <div class="bg-pink-50 rounded-2xl p-6 border border-pink-100 hover:shadow-md transition">
-            <div class="bg-pink-200 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-2xl">😌</div>
-            <h3 class="text-lg font-bold mb-2">눈치 보지 말고 질문해!</h3>
-            <p class="text-slate-700">사람이 아니니까 <strong>"이런 거 물어보면 바보 같으려나?"</strong> 하는 걱정 NO! 내 엉뚱한 생각도 마음 편하게 다 말할 수 있어요.</p>
-          </div>
-          <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100 hover:shadow-md transition">
-            <div class="bg-blue-200 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-2xl">🕊️</div>
-            <h3 class="text-lg font-bold mb-2">내가 바로 주인공</h3>
-            <p class="text-slate-700">무조건 가르침을 받는 수직적인 수업이 아니에요. 내가 주도해서 AI랑 친구처럼 <strong>동등하게 토론</strong>해요.</p>
-          </div>
-          <div class="bg-green-50 rounded-2xl p-6 border border-green-100 hover:shadow-md transition">
-            <div class="bg-green-200 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-2xl">⏱️</div>
-            <h3 class="text-lg font-bold mb-2">타이밍 맞춤형 힌트</h3>
-            <p class="text-slate-700">고전 용어 너무 어렵죠? 내가 딱 막히는 그 순간! AI가 <strong>힌트 요정</strong>처럼 필요한 배경지식만 쏙쏙 알려줘요.</p>
-          </div>
-        </div>
-      </div>
+      <!-- 2. 관동별곡 -->
+      <div id="section-gwandong" class="tab-content hidden space-y-6 animate-fadeIn">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="flex-1 space-y-4">
+            <h2 class="text-3xl font-bold border-b-4 border-blue-400 inline-block pb-1">관동별곡 🏞️</h2>
+            <p class="text-xl font-semibold text-slate-600">"조선시대 최고 조회수 여행 브이로그!"</p>
+            
+            <div class="bg-blue-50 p-5 rounded-2xl border border-blue-100 mt-4">
+              <ul class="space-y-3 text-lg">
+                <li><strong class="text-blue-700">핵심 줄거리:</strong> 멘탈 털려서 쉬고 있던 정철이 임금님의 부름을 받고 강원도 관찰사(도지사)로 부임하면서 쓴 기행 가사입니다. 금강산과 동해안(관동팔경)의 미친듯한 절경을 보며 감탄하고, 백성을 잘 다스리겠다는 다짐과 임금님에 대한 그리움을 담았어요.</li>
+                <li><strong class="text-blue-700">기억할 포인트:</strong> 여정(여행 경로)에 따른 전개, 연군지정(임금을 그리워함), 애민 정신(백성을 사랑함), 화려하고 역동적인 우리말 표현!</li>
+                <li><strong class="text-blue-700">저자:</strong> 정철 (가사 문학의 일인자)</li>
+              </ul>
+            </div>
 
-      <!-- 3. 연구 방법 -->
-      <div id="section-method" class="tab-content hidden space-y-6 animate-fadeIn">
-        <h2 class="text-2xl font-bold border-b-4 border-orange-300 inline-block pb-1">어떻게 실험했을까요? 🔬</h2>
-        <div class="bg-white border-2 border-slate-100 rounded-2xl overflow-hidden shadow-sm">
-          <table class="w-full text-left border-collapse">
-            <tbody>
-              <tr class="border-b border-slate-100">
-                <th class="bg-slate-50 p-4 w-1/3 text-slate-700">누구랑? 🧑‍🎓</th>
-                <td class="p-4">제주도의 고등학교 3학년 형/오빠들 20명</td>
-              </tr>
-              <tr class="border-b border-slate-100">
-                <th class="bg-slate-50 p-4 text-slate-700">어떤 작품으로? 📜</th>
-                <td class="p-4">조선시대 아이돌(?) 퇴계 이황의 <strong>&lt;도산십이곡&gt;</strong></td>
-              </tr>
-              <tr class="border-b border-slate-100">
-                <th class="bg-slate-50 p-4 text-slate-700">AI 멘토의 정체 🤖</th>
-                <td class="p-4">챗GPT를 똑똑하게 세팅해서 만든 '도산십이곡 전용 멘토'</td>
-              </tr>
-              <tr>
-                <th class="bg-slate-50 p-4 text-slate-700">어떻게 했나요? ⏱️</th>
-                <td class="p-4">수업 시간 중 <strong>약 20분 동안 AI와 1:1 카톡하듯 대화</strong>해보기! (이후 소감 인터뷰)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- 4. 연구 결과 -->
-      <div id="section-results" class="tab-content hidden space-y-8 animate-fadeIn">
-        <h2 class="text-2xl font-bold border-b-4 border-green-300 inline-block pb-1">결과는 대성공! 💡</h2>
-        <div class="space-y-4 mt-4">
-          <div class="flex gap-4 items-start bg-emerald-50 p-5 rounded-2xl">
-            <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 font-bold mt-1">1</div>
-            <div>
-              <h3 class="text-xl font-bold text-emerald-900 mb-2">생각이 엄청 깊어졌어요 📈</h3>
-              <p class="text-emerald-800">친구들 눈치 안 보고 "이거 아닐까?" 계속 가설을 던지다 보니, 나만의 해석이 <strong>논리적이고 깊게</strong> 발전했어요.</p>
+            <!-- 팝업 열기 버튼 -->
+            <div class="mt-6">
+              <button onclick="openModal('gwandong_image.jpg', '관동별곡')" class="flex items-center justify-center w-full md:w-auto gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-2xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                <i data-lucide="image" class="w-5 h-5"></i> 이미지 크게 보기
+              </button>
             </div>
           </div>
-          <div class="flex gap-4 items-start bg-amber-50 p-5 rounded-2xl">
-            <div class="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 font-bold mt-1">2</div>
-            <div>
-              <h3 class="text-xl font-bold text-amber-900 mb-2">내 개성 100% 반영 🎨</h3>
-              <p class="text-amber-800">내 관심사(예: 진로, 취미)를 섞어서 시를 해석할 수 있었어요. AI가 하는 말을 무조건 믿지 않고 <strong>골라 듣는 '밀당'</strong>도 가능했죠.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 items-start bg-sky-50 p-5 rounded-2xl">
-            <div class="bg-sky-500 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 font-bold mt-1">3</div>
-            <div>
-              <h3 class="text-xl font-bold text-sky-900 mb-2">필요할 때 힌트 쏙쏙 🧩</h3>
-              <p class="text-sky-800">선생님이 앞에서 50분 내내 설명할 땐 졸렸는데, 내가 진짜 궁금할 때 AI가 힌트를 주니까 <strong>이해가 쏙쏙</strong> 됐어요.</p>
+          <div class="md:w-1/3 flex justify-center cursor-pointer transform transition hover:scale-105" onclick="openModal('gwandong_image.jpg', '관동별곡')">
+            <img src="gwandong_image.jpg" alt="관동별곡 이미지" class="rounded-2xl shadow-lg object-cover w-full h-64" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- 이미지 로드 실패 시 대체 UI -->
+            <div class="hidden flex-col items-center justify-center bg-blue-100 border-2 border-dashed border-blue-300 w-full h-64 rounded-2xl text-blue-500 p-4 text-center shadow-lg">
+              <i data-lucide="map" class="w-12 h-12 mb-2"></i>
+              <span class="font-bold"></span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 5. 비판적 고찰 -->
-      <div id="section-discussion" class="tab-content hidden space-y-6 animate-fadeIn">
-        <h2 class="text-2xl font-bold border-b-4 border-red-300 inline-block pb-1">앞으로 조심해야 할 점 🔍</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="border border-slate-200 p-6 rounded-2xl shadow-sm">
-            <h3 class="text-lg font-bold flex items-center gap-2 mb-3 text-red-600">
-              <span class="text-xl">⚠️</span> 다시 뻔한 정답으로?
-            </h3>
-            <p class="text-slate-700">AI가 너무 친절하게 '교과서적인 설명'을 해주면, 내 톡톡 튀는 상상력이 다시 <strong>틀에 갇힐까 봐</strong> 걱정이에요.</p>
+      <!-- 3. 구운몽 -->
+      <div id="section-guunmong" class="tab-content hidden space-y-6 animate-fadeIn">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="flex-1 space-y-4">
+            <h2 class="text-3xl font-bold border-b-4 border-purple-400 inline-block pb-1">구운몽 ☁️</h2>
+            <p class="text-xl font-semibold text-slate-600">"모든 부귀영화는 하룻밤의 꿈이어라 (인생무상)"</p>
+            
+            <div class="bg-purple-50 p-5 rounded-2xl border border-purple-100 mt-4">
+              <ul class="space-y-3 text-lg">
+                <li><strong class="text-purple-700">핵심 줄거리:</strong> 불교 수행자였던 '성진'이 인간 세상의 쾌락을 탐내다 지옥에 떨어질 뻔합니다. 대신 벌로 인간 세상의 '양소유'로 태어나, 8명의 아름다운 여인(팔선녀)과 결혼하고 최고의 벼슬에 오르며 부귀영화를 다 누립니다. 하지만 나이가 들어 이 모든 것이 덧없음을 깨닫는 순간, 꿈에서 깨어나 다시 스님 '성진'으로 돌아온다는 멘탈 힐링 스토리!</li>
+                <li><strong class="text-purple-700">기억할 포인트:</strong> 환몽 구조 (현실-꿈-현실), 인생무상 (인생의 덧없음), 유불선 사상의 결합</li>
+                <li><strong class="text-purple-700">저자:</strong> 김만중</li>
+              </ul>
+            </div>
+
+            <!-- 팝업 열기 버튼 -->
+            <div class="mt-6">
+              <button onclick="openModal('guunmong_image.jpg', '구운몽')" class="flex items-center justify-center w-full md:w-auto gap-2 bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-2xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                <i data-lucide="image" class="w-5 h-5"></i> 이미지 크게 보기
+              </button>
+            </div>
           </div>
-          <div class="border border-slate-200 p-6 rounded-2xl shadow-sm">
-            <h3 class="text-lg font-bold flex items-center gap-2 mb-3 text-purple-600">
-              <span class="text-xl">🤖</span> AI 맹신 금지!
-            </h3>
-            <p class="text-slate-700">AI가 가끔 그럴싸한 거짓말(할루시네이션)을 할 때도 있어요. AI 말을 다 믿지 말고 <strong>나만의 생각으로 따져보는 연습</strong>이 꼭 필요해요.</p>
-          </div>
-          <div class="border border-slate-200 p-6 rounded-2xl shadow-sm md:col-span-2 bg-slate-800 text-white">
-            <h3 class="text-lg font-bold flex items-center gap-2 mb-3 text-yellow-300">
-              <span class="text-xl">👨‍🏫</span> 선생님의 새로운 역할
-            </h3>
-            <p class="text-slate-300">그럼 선생님은 이제 필요 없냐고요? 놉! 선생님은 이제 설명만 하는 게 아니라, 우리가 AI랑 잘 놀 수 있게 판을 깔아주는 <strong>'게임 마스터(환경 설계자)'</strong>가 되어주실 거예요!</p>
+          <div class="md:w-1/3 flex justify-center cursor-pointer transform transition hover:scale-105" onclick="openModal('guunmong_image.jpg', '구운몽')">
+            <img src="guunmong_image.jpg" alt="구운몽 이미지" class="rounded-2xl shadow-lg object-cover w-full h-64" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- 이미지 로드 실패 시 대체 UI -->
+            <div class="hidden flex-col items-center justify-center bg-purple-100 border-2 border-dashed border-purple-300 w-full h-64 rounded-2xl text-purple-500 p-4 text-center shadow-lg">
+              <i data-lucide="cloud" class="w-12 h-12 mb-2"></i>
+              <span class="font-bold"></span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 6. 퀴즈 영역 -->
+      <!-- 4. 청산별곡 -->
+      <div id="section-cheongsan" class="tab-content hidden space-y-6 animate-fadeIn">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="flex-1 space-y-4">
+            <h2 class="text-3xl font-bold border-b-4 border-green-400 inline-block pb-1">청산별곡 🍃</h2>
+            <p class="text-xl font-semibold text-slate-600">"현실 도피! 속세를 떠나 자연에서 살고파"</p>
+            
+            <div class="bg-green-50 p-5 rounded-2xl border border-green-100 mt-4">
+              <ul class="space-y-3 text-lg">
+                <li><strong class="text-green-700">핵심 줄거리:</strong> 삶이 너무 힘들었던 고려시대 사람들이 부른 유행가(고려가요)입니다. "살어리 살어리랏다 청산에 살어리랏다~" 괴로운 현실(속세)을 떠나 평화로운 자연인 산(청산)과 바다로 도망쳐서 머루와 다래만 먹고 살아도 좋겠다는 애절한 마음을 담았어요.</li>
+                <li><strong class="text-green-700">기억할 포인트:</strong> 고려가요의 특징(3음보, 후렴구), 현실 도피와 자연에 대한 동경, 리듬감 넘치는 후렴구 <strong class="bg-green-200 px-2 rounded">"얄리얄리 얄라셩 얄라리 얄라"</strong></li>
+                <li><strong class="text-green-700">저자:</strong> 작자 미상 (평민들이 입에서 입으로 전함)</li>
+              </ul>
+            </div>
+
+            <!-- 팝업 열기 버튼 -->
+            <div class="mt-6">
+              <button onclick="openModal('cheongsan_image.jpg', '청산별곡')" class="flex items-center justify-center w-full md:w-auto gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-2xl font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                <i data-lucide="image" class="w-5 h-5"></i> 이미지 크게 보기
+              </button>
+            </div>
+          </div>
+          <div class="md:w-1/3 flex justify-center cursor-pointer transform transition hover:scale-105" onclick="openModal('cheongsan_image.jpg', '청산별곡')">
+            <img src="cheongsan_image.jpg" alt="청산별곡 이미지" class="rounded-2xl shadow-lg object-cover w-full h-64" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- 이미지 로드 실패 시 대체 UI -->
+            <div class="hidden flex-col items-center justify-center bg-green-100 border-2 border-dashed border-green-300 w-full h-64 rounded-2xl text-green-500 p-4 text-center shadow-lg">
+              <i data-lucide="music" class="w-12 h-12 mb-2"></i>
+              <span class="font-bold"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. 퀴즈 영역 -->
       <div id="section-quiz" class="tab-content hidden">
         <!-- 퀴즈 내용은 JS로 동적 렌더링 됩니다 -->
       </div>
@@ -206,17 +195,36 @@
       <button onclick="closeModal(event)" class="absolute -top-12 right-0 md:-right-12 text-white hover:text-pink-400 transition-colors" title="닫기">
         <i data-lucide="x-circle" class="w-10 h-10"></i>
       </button>
-      <img src="unnamed.png" alt="인포그래픽 크게 보기" class="rounded-2xl shadow-2xl max-h-[85vh] object-contain w-full bg-slate-50" onerror="this.src=''; this.alt='이미지를 불러올 수 없습니다.'">
+      
+      <!-- 모달 내 이미지 -->
+      <img id="modal-img" src="" alt="크게 보기" class="rounded-2xl shadow-2xl max-h-[85vh] object-contain w-full bg-slate-50" onerror="this.style.display='none'; document.getElementById('modal-fallback').style.display='flex';">
+      
+      <!-- 모달 내 이미지 로드 실패 시 대체 UI -->
+      <div id="modal-fallback" class="hidden flex-col items-center justify-center bg-slate-800 border-2 border-dashed border-slate-600 w-full h-[60vh] rounded-2xl text-slate-300 p-8 text-center shadow-2xl">
+        <i data-lucide="image-off" class="w-20 h-20 mb-4 text-slate-500"></i>
+        <span id="modal-fallback-text" class="text-2xl font-bold"></span>
+        <p class="mt-4 text-slate-400">이미지를 불러올 수 없습니다.</p>
+      </div>
     </div>
   </div>
 
   <!-- JavaScript 로직 -->
   <script>
     // --- 팝업 모달 로직 ---
-    function openModal() {
+    function openModal(imageSrc, title) {
       const modal = document.getElementById('image-modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalFallback = document.getElementById('modal-fallback');
+      const fallbackText = document.getElementById('modal-fallback-text');
+      
+      // 초기화
+      modalImg.style.display = 'block';
+      modalFallback.style.display = 'none';
+      
+      modalImg.src = imageSrc;
+      fallbackText.innerText = ``;
+
       modal.classList.remove('hidden');
-      // UI 업데이트 후 투명도 조절로 페이드인 효과
       requestAnimationFrame(() => {
         modal.classList.remove('opacity-0');
         modal.classList.add('opacity-100');
@@ -228,23 +236,22 @@
       const modal = document.getElementById('image-modal');
       modal.classList.remove('opacity-100');
       modal.classList.add('opacity-0');
-      // CSS 트랜지션(300ms)이 끝난 후 완전히 숨김
       setTimeout(() => {
         modal.classList.add('hidden');
+        document.getElementById('modal-img').src = ''; // 이미지 src 초기화
       }, 300); 
     }
 
     // --- 탭 상태 및 데이터 ---
     const tabs = [
-      { id: 'intro', label: '연구 개요', icon: 'book-open' },
-      { id: 'background', label: '이론적 배경', icon: 'lightbulb' },
-      { id: 'method', label: '연구 방법', icon: 'users' },
-      { id: 'results', label: '연구 결과', icon: 'check-circle' },
-      { id: 'discussion', label: '비판적 고찰', icon: 'message-circle' },
-      { id: 'quiz', label: '확인 퀴즈', icon: 'help-circle' },
+      { id: 'hong', label: '홍길동전', icon: 'swords', color: 'text-red-600' },
+      { id: 'gwandong', label: '관동별곡', icon: 'map', color: 'text-blue-600' },
+      { id: 'guunmong', label: '구운몽', icon: 'cloud', color: 'text-purple-600' },
+      { id: 'cheongsan', label: '청산별곡', icon: 'music', color: 'text-green-600' },
+      { id: 'quiz', label: '확인 퀴즈', icon: 'help-circle', color: 'text-slate-600' },
     ];
 
-    let activeTabId = 'intro';
+    let activeTabId = 'hong';
 
     // 탭 렌더링
     function renderTabs() {
@@ -254,13 +261,16 @@
       tabs.forEach(tab => {
         const isActive = tab.id === activeTabId;
         const btnClass = isActive 
-          ? 'bg-indigo-500 text-white shadow-md transform -translate-y-1' 
-          : 'bg-white text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 shadow-sm';
+          ? 'bg-teal-500 text-white shadow-md transform -translate-y-1' 
+          : 'bg-white text-slate-600 hover:bg-teal-50 hover:text-teal-600 shadow-sm';
         
         const btn = document.createElement('button');
         btn.className = `flex items-center gap-2 px-4 py-3 rounded-2xl font-bold transition-all duration-300 ${btnClass}`;
         btn.onclick = () => switchTab(tab.id);
-        btn.innerHTML = `<i data-lucide="${tab.icon}" class="w-5 h-5"></i> ${tab.label}`;
+        
+        // 아이콘에 색상 적용 (활성화되지 않았을 때만 탭 고유 색상 보여주기)
+        const iconColor = isActive ? '' : tab.color;
+        btn.innerHTML = `<i data-lucide="${tab.icon}" class="w-5 h-5 ${iconColor}"></i> ${tab.label}`;
         
         container.appendChild(btn);
       });
@@ -280,13 +290,14 @@
       
       // 선택된 섹션 보이기
       const activeSection = document.getElementById(`section-${tabId}`);
-      activeSection.classList.remove('hidden');
-      
-      // reflow를 강제로 발생시켜 애니메이션 다시 시작
-      void activeSection.offsetWidth; 
-      activeSection.classList.add('animate-fadeIn');
+      if(activeSection) {
+        activeSection.classList.remove('hidden');
+        // reflow를 강제로 발생시켜 애니메이션 다시 시작
+        void activeSection.offsetWidth; 
+        activeSection.classList.add('animate-fadeIn');
+      }
 
-      // 퀴즈 탭을 열 때마다 초기 상태로 리셋하고 싶다면 활성화
+      // 퀴즈 탭을 열 때마다 초기 상태로 리셋
       if (tabId === 'quiz' && !quizInitialized) {
         initQuiz();
       }
@@ -295,35 +306,45 @@
     // --- 퀴즈 시스템 ---
     const questions = [
       {
-        questionText: 'Q1. 이번 실험에서 학생들과 1:1로 수다를 떤 AI 멘토는 어떤 작품을 도와줬을까요?',
+        questionText: 'Q1. "아버지를 아버지라 부르지 못하고..." 서얼 차별에 맞서 이상국가인 율도국을 세운 이 소설의 주인공은?',
         answerOptions: [
-          { answerText: '관동별곡', isCorrect: false },
-          { answerText: '도산십이곡', isCorrect: true },
+          { answerText: '양소유', isCorrect: false },
+          { answerText: '정철', isCorrect: false },
+          { answerText: '홍길동', isCorrect: true },
+          { answerText: '성진', isCorrect: false },
+        ],
+        explanation: '정답! 허균이 지은 한글 소설 <홍길동전>의 길동이 이야기입니다.'
+      },
+      {
+        questionText: 'Q2. 정철이 강원도 관찰사로 부임하며 금강산과 관동팔경의 절경을 보고 쓴 조선시대 최고의 여행 브이로그(기행 가사)의 제목은?',
+        answerOptions: [
+          { answerText: '관동별곡', isCorrect: true },
+          { answerText: '청산별곡', isCorrect: false },
           { answerText: '사미인곡', isCorrect: false },
-          { answerText: '상춘곡', isCorrect: false },
+          { answerText: '구운몽', isCorrect: false },
         ],
-        explanation: '정답! 퇴계 이황의 <도산십이곡>을 가지고 AI 멘토와 재미있게 대화했어요.'
+        explanation: '정답! 아름다운 우리말 표현과 애민 정신이 담긴 <관동별곡>입니다.'
       },
       {
-        questionText: 'Q2. AI 멘토랑 대화하니까 학생들 심리가 어떻게 변했을까요?',
+        questionText: 'Q3. "살어리 살어리랏다 청산에 살어리랏다" 힘들고 고달픈 현실을 떠나 청산과 바다에서 평화롭게 살고 싶은 마음을 담은 고려가요는?',
         answerOptions: [
-          { answerText: '정답만 빨리 알려줘서 기분이 좋았다.', isCorrect: false },
-          { answerText: '글쓰기 숙제를 AI가 다 해줘서 편했다.', isCorrect: false },
-          { answerText: '평가받는 느낌이 안 들어서 내 생각을 맘 편히 솔직하게 말했다.', isCorrect: true },
-          { answerText: '사람 선생님보다 훨씬 완벽해서 무조건 믿게 되었다.', isCorrect: false },
+          { answerText: '구운몽', isCorrect: false },
+          { answerText: '홍길동전', isCorrect: false },
+          { answerText: '관동별곡', isCorrect: false },
+          { answerText: '청산별곡', isCorrect: true },
         ],
-        explanation: '맞아요! AI는 나를 혼내거나 평가하지 않으니까 눈치 볼 필요 없이 솔직하게 내 생각을 던져볼 수 있었죠.'
+        explanation: '정답! "얄리얄리 얄라셩"이라는 흥겨운 후렴구가 특징인 <청산별곡>입니다.'
       },
       {
-        questionText: 'Q3. 앞으로 AI가 있는 교실에서 우리 "선생님"은 어떤 멋진 역할을 하게 될까요?',
+        questionText: 'Q4. 주인공 성진이 꿈속에서 양소유로 태어나 팔선녀와 부귀영화를 누리다가, 깨어난 후 인생의 덧없음(인생무상)을 깨닫게 되는 김만중의 소설은?',
         answerOptions: [
-          { answerText: '칠판에 지식만 빽빽하게 적어주는 사람', isCorrect: false },
-          { answerText: '학생들이 AI와 안전하고 재밌게 대화하도록 돕는 "게임 마스터(환경 설계자)"', isCorrect: true },
-          { answerText: '우리가 AI 못 쓰게 감시만 하는 무서운 통제자', isCorrect: false },
-          { answerText: '아무것도 안 하셔도 되는 사람', isCorrect: false },
+          { answerText: '홍길동전', isCorrect: false },
+          { answerText: '구운몽', isCorrect: true },
+          { answerText: '관동별곡', isCorrect: false },
+          { answerText: '청산별곡', isCorrect: false },
         ],
-        explanation: '정답! 이제 선생님은 지식만 알려주는 게 아니라, 우리가 스스로 잘 배울 수 있게 돕는 든든한 가이드(환경 설계자)가 되실 거예요!'
-      },
+        explanation: '정답! 현실-꿈-현실의 환몽 구조를 가진 <구운몽>입니다. (아홉 구, 구름 운, 꿈 몽)'
+      }
     ];
 
     let currentQuestionIdx = 0;
@@ -370,15 +391,15 @@
       
       if (showScore) {
         container.innerHTML = `
-          <div class="max-w-2xl mx-auto py-8 animate-fadeIn text-center space-y-6 bg-indigo-50 p-10 rounded-3xl border border-indigo-100">
-            <i data-lucide="award" class="w-24 h-24 mx-auto text-indigo-500 mb-4"></i>
-            <h2 class="text-3xl font-bold text-slate-800">퀴즈 완료! 🎉</h2>
+          <div class="max-w-2xl mx-auto py-8 animate-fadeIn text-center space-y-6 bg-teal-50 p-10 rounded-3xl border border-teal-100">
+            <i data-lucide="award" class="w-24 h-24 mx-auto text-teal-500 mb-4"></i>
+            <h2 class="text-3xl font-bold text-slate-800">고전문학 마스터! 🎉</h2>
             <p class="text-2xl font-medium text-slate-700">
-              총 ${questions.length}문제 중 <span class="text-indigo-600 font-extrabold text-4xl">${score}</span>문제를 맞혔습니다!
+              총 ${questions.length}문제 중 <span class="text-teal-600 font-extrabold text-4xl">${score}</span>문제를 맞혔습니다!
             </p>
             <div class="pt-6">
-              <button onclick="initQuiz()" class="flex items-center justify-center gap-2 mx-auto bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-bold transition-colors">
-                <i data-lucide="refresh-cw" class="w-5 h-5"></i> 다시 풀기
+              <button onclick="initQuiz()" class="flex items-center justify-center gap-2 mx-auto bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-full font-bold transition-colors">
+                <i data-lucide="refresh-cw" class="w-5 h-5"></i> 퀴즈 다시 풀기
               </button>
             </div>
           </div>
@@ -392,7 +413,7 @@
           let btnClass = "w-full text-left px-5 py-4 rounded-xl border-2 transition-all font-medium text-lg ";
           
           if (selectedAnswerIdx === null) {
-            btnClass += "border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 text-slate-700 cursor-pointer";
+            btnClass += "border-slate-200 hover:border-teal-400 hover:bg-teal-50 text-slate-700 cursor-pointer";
           } else if (opt.isCorrect) {
             btnClass += "border-green-500 bg-green-50 text-green-800";
           } else if (selectedAnswerIdx === index && !opt.isCorrect) {
@@ -431,10 +452,10 @@
         container.innerHTML = `
           <div class="max-w-2xl mx-auto py-8 animate-fadeIn space-y-6">
             <div class="flex justify-between items-center mb-6">
-              <h2 class="text-2xl font-bold text-slate-800 border-b-4 border-indigo-300 inline-block pb-1">
-                핵심 콕콕! 확인 퀴즈 🎯
+              <h2 class="text-2xl font-bold text-slate-800 border-b-4 border-teal-300 inline-block pb-1">
+                핵심 콕콕! 고전문학 퀴즈 🎯
               </h2>
-              <span class="bg-indigo-100 text-indigo-800 px-4 py-1.5 rounded-full font-bold text-sm">
+              <span class="bg-teal-100 text-teal-800 px-4 py-1.5 rounded-full font-bold text-sm">
                 문제 ${currentQuestionIdx + 1} / ${questions.length}
               </span>
             </div>
@@ -459,7 +480,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       renderTabs();
       initQuiz(); // 퀴즈 시스템 초기화
-      switchTab('intro'); // 첫 탭 활성화
+      switchTab('hong'); // 첫 탭(홍길동전) 활성화
     });
   </script>
 </body>
