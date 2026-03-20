@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI와 만난 고전문학 🚀</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- 귀여운 느낌을 주는 'Jua' 폰트와 본문용 'Noto Sans KR' 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // 다크모드 설정 추가
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                        display: ['"Jua"', 'sans-serif'], // 제목용 귀여운 폰트
+                    },
+                    colors: {
+                        primary: '#8B5CF6', // 통통 튀는 보라색 (Violet)
+                        secondary: '#F472B6', // 귀여운 핑크색 (Pink)
+                        accent: '#FBBF24', // 따뜻한 노란색 (Amber)
+                        paper: '#FFFDF9', // 부드러운 크림색 배경
+                        ink: '#374151',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFFDF9;
+            color: #374151;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark body {
+            background-color: #111827; /* dark:bg-gray-900 */
+            color: #F3F4F6; /* dark:text-gray-100 */
+        }
+        .cute-pattern {
+            background-image: radial-gradient(#F472B6 1.5px, transparent 1.5px);
+            background-size: 30px 30px;
+            background-color: #FFFDF9;
+            transition: background-color 0.3s;
+        }
+        .dark .cute-pattern {
+            background-image: radial-gradient(rgba(244, 114, 182, 0.3) 1.5px, transparent 1.5px);
+            background-color: #111827;
+        }
+        /* 귀여운 밑줄 효과 */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: -5%;
+            bottom: 2px;
+            width: 110%;
+            height: 12px;
+            background-color: #FDE68A; /* 노란색 형광펜 효과 */
+            border-radius: 10px;
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+        /* 둥글둥글한 카드 호버 효과 */
+        .bouncy-card {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .bouncy-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.15), 0 8px 10px -6px rgba(139, 92, 246, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pink-200 selection:text-pink-900 dark:selection:bg-pink-900 dark:selection:text-pink-200">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full top-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b-2 border-gray-100 dark:border-gray-800 shadow-sm transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2 group cursor-pointer">
+                    <div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-xl group-hover:rotate-12 transition-transform">
+                        <i data-lucide="sparkles" class="text-primary dark:text-purple-400 w-5 h-5"></i>
+                    </div>
+                    <span class="font-display text-2xl tracking-wide text-ink dark:text-white mt-1 transition-colors duration-300">AI 고전문학</span>
+                </div>
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="#intro" class="font-bold text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-purple-400 transition-colors">수업 소개 ✨</a>
+                    <a href="#ethics" class="font-bold text-gray-500 dark:text-gray-400 hover:text-secondary dark:hover:text-pink-400 transition-colors">AI 약속 🤙</a>
+                    <a href="#search" class="font-bold text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-yellow-400 transition-colors">작품 검색 🔍</a>
+                    <a href="#program" class="font-bold text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-purple-400 transition-colors">활동 안내 🎮</a>
+                    
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="themeToggle" class="ml-2 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50" aria-label="Toggle Dark Mode">
+                        <span id="themeIcon" class="text-xl">🌙</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="intro" class="pt-32 pb-20 md:pt-40 md:pb-28 cute-pattern overflow-hidden relative transition-colors duration-300">
+        <!-- Floating decorative blobs -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-yellow-200 dark:bg-yellow-500/20 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-2xl opacity-50 animate-pulse transition-colors duration-300"></div>
+        <div class="absolute top-40 right-10 w-32 h-32 bg-pink-200 dark:bg-pink-500/20 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-2xl opacity-50 animate-pulse transition-colors duration-300" style="animation-delay: 1s;"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white dark:bg-gray-800 text-primary dark:text-purple-400 font-bold text-sm mb-6 border-2 border-violet-100 dark:border-gray-700 shadow-sm transition-colors duration-300">
+                🎉 2026학년도 1학기 국어 프로젝트
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display text-ink dark:text-white mb-6 leading-tight tracking-wide drop-shadow-sm transition-colors duration-300">
+                과거의 지혜를 <br class="hidden md:block" /> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-secondary dark:from-purple-400 dark:via-purple-300 dark:to-pink-400">미래의 기술</span>로 읽다 🚀
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-medium leading-relaxed mb-10 transition-colors duration-300">
+                어렵고 멀게만 느껴졌던 고전문학 🥺👉👈<br class="hidden md:block"/>
+                이제 똑똑한 인공지능 친구와 함께 쉽고 재밌게 탐구해봐요!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#search" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-violet-600 dark:bg-purple-600 dark:hover:bg-purple-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-violet-200 dark:shadow-none hover:-translate-y-1 text-lg">
+                    작품 검색해보기 🔍
+                </a>
+                <a href="#program" class="inline-flex items-center justify-center gap-2 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-ink dark:text-white px-8 py-4 rounded-full font-bold transition-all border-2 border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 text-lg">
+                    뭐하고 놀까? 🤔
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: AI Ethics -->
+    <section id="ethics" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display text-ink dark:text-white section-title mt-2 transition-colors duration-300">우리의 AI 사용 약속 🤙</h2>
+                <p class="mt-6 text-gray-600 dark:text-gray-400 font-medium max-w-2xl mx-auto transition-colors duration-300">AI는 정말 편리한 도구지만, 내 생각을 대신할 순 없어요! <br>멋진 국어 시간을 위해 아래 3가지는 꼭 지켜주기로 해요.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Ethics Card 1 -->
+                <div class="bg-violet-50 dark:bg-gray-800 rounded-3xl p-8 border-2 border-violet-100 dark:border-gray-700 bouncy-card transition-colors duration-300">
+                    <div class="w-16 h-16 bg-white dark:bg-gray-700 shadow-sm text-4xl rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+                        🧐
+                    </div>
+                    <h3 class="text-2xl font-display mb-3 text-ink dark:text-white transition-colors duration-300">무조건 믿지 않기!</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-medium text-sm transition-colors duration-300">
+                        AI가 가끔 그럴듯한 거짓말(할루시네이션)을 할 때가 있어요! 고전문학의 배경이나 해석을 물어봤을 때, 교과서나 믿을 수 있는 자료로 꼭 <b>팩트체크</b> 해보기 약속!
+                    </p>
+                </div>
+
+                <!-- Ethics Card 2 -->
+                <div class="bg-pink-50 dark:bg-gray-800 rounded-3xl p-8 border-2 border-pink-100 dark:border-gray-700 bouncy-card transition-colors duration-300">
+                    <div class="w-16 h-16 bg-white dark:bg-gray-700 shadow-sm text-4xl rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+                        ✍️
+                    </div>
+                    <h3 class="text-2xl font-display mb-3 text-ink dark:text-white transition-colors duration-300">복붙은 절대 NO!</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-medium text-sm transition-colors duration-300">
+                        AI가 써준 글을 내 과제인 척 내는 건 반칙이에요 🚫 AI는 아이디어를 얻는 '보조 선생님'으로만 쓰고, 최종 글쓰기는 <b>나만의 생각과 내 손</b>으로 완성해요.
+                    </p>
+                </div>
+
+                <!-- Ethics Card 3 -->
+                <div class="bg-amber-50 dark:bg-gray-800 rounded-3xl p-8 border-2 border-amber-100 dark:border-gray-700 bouncy-card transition-colors duration-300">
+                    <div class="w-16 h-16 bg-white dark:bg-gray-700 shadow-sm text-4xl rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+                        ⚖️
+                    </div>
+                    <h3 class="text-2xl font-display mb-3 text-ink dark:text-white transition-colors duration-300">편견 주의하기!</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-medium text-sm transition-colors duration-300">
+                        AI는 특정 시각에 치우친 답변을 줄 수도 있어요. 고전문학에는 다양한 시대적, 문화적 맥락이 있으니 AI의 한 가지 해석에만 갇히지 말고 <b>넓게 생각</b>해봐요!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-3xl p-6 flex flex-col md:flex-row items-center justify-center gap-4 text-center transition-colors duration-300">
+                <span class="text-3xl">📝</span>
+                <p class="text-gray-700 dark:text-gray-300 font-bold text-base md:text-lg transition-colors duration-300">
+                    수행평가 낼 때는 <span class="text-primary dark:text-purple-400 underline decoration-wavy decoration-primary dark:decoration-purple-400 underline-offset-4">어떻게 AI를 활용했는지(프롬프트 등) 꼭 적어주기!</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1.5: AI Literature Search -->
+    <section id="search" class="py-24 bg-gradient-to-b from-white to-violet-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="mb-10">
+                <h2 class="text-4xl md:text-5xl font-display text-ink dark:text-white section-title mt-2 transition-colors duration-300">고전문학 AI 백과사전 📚</h2>
+                <p class="mt-6 text-gray-600 dark:text-gray-400 font-medium max-w-2xl mx-auto transition-colors duration-300">궁금한 작품명을 검색하면 AI가 줄거리와 배경을 3줄 요약해 줘요!</p>
+            </div>
+            
+            <!-- Search Form: Handled by Vanilla JS -->
+            <form id="searchForm" class="relative max-w-2xl mx-auto group">
+                <div class="relative flex items-center">
+                    <span class="absolute left-6 text-2xl z-10 transition-transform group-hover:scale-110 duration-300">🔎</span>
+                    <input type="text" id="searchInput" name="q" placeholder="어떤 작품이 궁금해? (예: 홍길동전)" 
+                           class="w-full pl-16 pr-36 py-5 rounded-full border-4 border-white dark:border-gray-700 focus:border-primary dark:focus:border-purple-500 focus:ring-4 focus:ring-primary/20 dark:focus:ring-purple-500/20 outline-none transition-all text-lg font-bold shadow-xl shadow-violet-100 dark:shadow-none placeholder-gray-400 dark:placeholder-gray-500 bg-white/80 dark:bg-gray-800/80 dark:text-white backdrop-blur-sm" required>
+                    <button type="submit" id="searchBtn" class="absolute right-3 bg-primary hover:bg-violet-600 dark:bg-purple-600 dark:hover:bg-purple-500 text-white px-6 py-3 rounded-full font-bold transition-all transform active:scale-95 shadow-md flex items-center justify-center min-w-[120px]">
+                        <span>검색하기 ✨</span>
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Recommended Keywords -->
+            <div class="mt-10 flex flex-wrap justify-center gap-3 items-center">
+                <span class="text-sm font-bold text-gray-400 dark:text-gray-500 mr-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full transition-colors duration-300">많이 찾는 작품 🔥</span>
+                <a href="./01/index.html?q=홍길동전" class="px-5 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-full text-sm font-bold text-gray-600 dark:text-gray-300 hover:border-secondary dark:hover:border-pink-500 hover:text-secondary dark:hover:text-pink-400 hover:-translate-y-1 transition-all shadow-sm">#홍길동전 🥷</a>
+                <a href="./01/index.html?q=관동별곡" class="px-5 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-full text-sm font-bold text-gray-600 dark:text-gray-300 hover:border-primary dark:hover:border-purple-400 hover:text-primary dark:hover:text-purple-400 hover:-translate-y-1 transition-all shadow-sm">#관동별곡 ⛰️</a>
+                <a href="./01/index.html?q=구운몽" class="px-5 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-full text-sm font-bold text-gray-600 dark:text-gray-300 hover:border-accent dark:hover:border-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400 hover:-translate-y-1 transition-all shadow-sm">#구운몽 ☁️</a>
+                <a href="./01/index.html?q=청산별곡" class="px-5 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-full text-sm font-bold text-gray-600 dark:text-gray-300 hover:border-secondary dark:hover:border-pink-500 hover:text-secondary dark:hover:text-pink-400 hover:-translate-y-1 transition-all shadow-sm">#청산별곡 🐦</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: AI Learning Program -->
+    <section id="program" class="py-24 bg-paper dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-display text-ink dark:text-white section-title mt-2 transition-colors duration-300">이번 학기 활동 안내 🎮</h2>
+                <p class="mt-6 text-gray-600 dark:text-gray-400 font-medium max-w-2xl mx-auto transition-colors duration-300">AI와 함께라면 고전문학도 꿀잼 보장! 이런 것들을 해볼 거예요.</p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Program Feature 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="w-full md:w-1/2 aspect-video bg-white dark:bg-gray-800 rounded-3xl shadow-xl shadow-blue-100/50 dark:shadow-none border-4 border-blue-50 dark:border-gray-700 overflow-hidden relative flex items-center justify-center group bouncy-card transition-colors duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 opacity-50"></div>
+                        <div class="relative z-10 w-4/5 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-5 flex flex-col gap-3 transition-colors duration-300">
+                            <div class="flex justify-between items-center border-b-2 border-dashed border-gray-200 dark:border-gray-600 pb-3 mb-2">
+                                <span class="text-sm font-bold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">외계어(?) 👽</span>
+                                <span class="text-xl">➡️</span>
+                                <span class="text-sm font-bold text-blue-500 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">현대어 ✨</span>
+                            </div>
+                            <p class="text-base font-serif text-gray-800 dark:text-gray-200 font-medium">나랏말ᄊᆞ미 듕귁에 달아 문ᄍᆞ와로 서르 사맛디 아니ᄒᆞᆯᄊᆡ...</p>
+                            <div class="bg-gray-100 dark:bg-gray-700 h-1 w-full rounded-full my-1 transition-colors duration-300"></div>
+                            <p class="text-base text-blue-600 dark:text-blue-400 font-bold">우리나라의 말이 중국과 달라 한자와는 서로 통하지 아니하여서...</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 mb-4 font-bold transition-colors duration-300">
+                            활동 1
+                        </div>
+                        <h3 class="text-3xl font-display mb-4 text-ink dark:text-white transition-colors duration-300">AI 고어 번역기 돌리기 🪄</h3>
+                        <p class="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6 transition-colors duration-300">
+                            읽기만 해도 머리 아팠던 중세 국어! AI의 도움을 받아 현대어로 쉽게 샥~ 번역해 봐요. 단순 번역을 넘어서 그 시대의 역사적 배경이나 숨은 의미도 AI에게 물어보며 깊이 있게 이해할 수 있어요.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-4 py-3 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-300"><span class="text-xl">✅</span> 관동별곡 등 어려운 가사 문학 쉽게 읽기</li>
+                            <li class="flex items-center gap-3 font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-4 py-3 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-300"><span class="text-xl">✅</span> 당시 시대적 배경(당쟁, 유배 등) 맥락 파악하기</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program Feature 2 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+                    <div class="w-full md:w-1/2 aspect-video bg-white dark:bg-gray-800 rounded-3xl shadow-xl shadow-pink-100/50 dark:shadow-none border-4 border-pink-50 dark:border-gray-700 overflow-hidden relative flex items-center justify-center group bouncy-card transition-colors duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-bl from-pink-100 to-rose-50 dark:from-pink-900/30 dark:to-rose-900/30 opacity-50"></div>
+                        <div class="relative z-10 w-4/5 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-5 transition-colors duration-300">
+                            <p class="text-sm bg-gray-100 dark:bg-gray-700 p-3 rounded-xl text-gray-600 dark:text-gray-300 mb-4 font-bold border-l-4 border-secondary dark:border-pink-500 transition-colors duration-300">
+                                Prompt: 수양산을 바라보며 굳은 절개를 지키는 성삼문을 몽환적인 일러스트로 그려줘 🎨
+                            </p>
+                            <div class="w-full h-36 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden transition-colors duration-300">
+                                <span class="text-5xl z-10 animate-bounce">🖼️</span>
+                                <div class="absolute inset-0 bg-gradient-to-tr from-pink-300 to-purple-300 dark:from-pink-600/50 dark:to-purple-600/50 opacity-60"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-pink-100 dark:bg-pink-900/40 text-pink-600 dark:text-pink-400 mb-4 font-bold transition-colors duration-300">
+                            활동 2
+                        </div>
+                        <h3 class="text-3xl font-display mb-4 text-ink dark:text-white transition-colors duration-300">시조/가사 일러스트레이터 되기 🎨</h3>
+                        <p class="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6 transition-colors duration-300">
+                            글로만 읽던 시조의 아름다운 풍경을 직접 그림으로 만들어 볼까요? 생성형 AI를 활용해서 시의 분위기, 주인공의 감정을 프롬프트로 적어 나만의 멋진 삽화를 창작하고 발표해 봐요.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-4 py-3 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-300"><span class="text-xl">✅</span> 시어의 숨은 의미를 분석해 프롬프트로 변환</li>
+                            <li class="flex items-center gap-3 font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-4 py-3 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-300"><span class="text-xl">✅</span> 내 감상이 듬뿍 담긴 나만의 삽화 전시회 열기</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program Feature 3 -->
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="w-full md:w-1/2 aspect-video bg-white dark:bg-gray-800 rounded-3xl shadow-xl shadow-green-100/50 dark:shadow-none border-4 border-green-50 dark:border-gray-700 overflow-hidden relative flex items-center justify-center group bouncy-card transition-colors duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 opacity-50"></div>
+                        <div class="relative z-10 w-4/5 bg-white dark:bg-gray-800 rounded-2xl shadow-lg flex flex-col h-56 transition-colors duration-300">
+                            <div class="bg-emerald-50 dark:bg-gray-700/50 border-b-2 border-emerald-100 dark:border-gray-600 px-4 py-3 flex items-center gap-3 rounded-t-2xl transition-colors duration-300">
+                                <div class="w-10 h-10 rounded-full bg-white dark:bg-gray-600 flex items-center justify-center text-2xl shadow-sm transition-colors duration-300">👧🏻</div>
+                                <span class="text-base font-bold text-emerald-800 dark:text-emerald-300 mt-1 transition-colors duration-300">심청이 AI</span>
+                            </div>
+                            <div class="p-4 flex-1 flex flex-col gap-3 overflow-y-auto">
+                                <div class="bg-primary dark:bg-purple-600 text-white font-medium p-3 rounded-2xl rounded-tr-sm self-end max-w-[80%] shadow-sm text-sm transition-colors duration-300">
+                                    인당수에 뛰어들 때 솔직히 무섭진 않았어? 🥺
+                                </div>
+                                <div class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium p-3 rounded-2xl rounded-tl-sm self-start max-w-[80%] shadow-sm text-sm transition-colors duration-300">
+                                    어찌 두렵지 않았겠습니까. 다리가 덜덜 떨렸지요. 하지만 아버님의 눈을 뜨게 해드릴 수 있다는 희망 하나로 꾹 참았답니다. 💧
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 mb-4 font-bold transition-colors duration-300">
+                            활동 3
+                        </div>
+                        <h3 class="text-3xl font-display mb-4 text-ink dark:text-white transition-colors duration-300">등장인물과 카톡(?) 하기 💬</h3>
+                        <p class="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6 transition-colors duration-300">
+                            홍길동, 춘향이, 심청이와 직접 대화해 볼 수 있다면? 인물의 성격을 완벽하게 학습한 AI 챗봇과 롤플레잉 인터뷰를 해봐요. 주인공에게 궁금했던 점을 직접 물어보며 캐릭터에 과몰입해 보는 시간!
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-4 py-3 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-300"><span class="text-xl">✅</span> 주인공과의 가상 인터뷰로 캐릭터 성격 분석</li>
+                            <li class="flex items-center gap-3 font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-4 py-3 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-300"><span class="text-xl">✅</span> 춘향이에게 "요즘 시대라면 어떻게 할래?" 물어보기</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 dark:bg-gray-950 py-12 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <span class="text-2xl">🏫</span>
+                    <span class="font-display font-bold text-xl text-gray-700 dark:text-gray-300 mt-1 transition-colors duration-300">AI 고전문학</span>
+                </div>
+                <p class="text-sm font-bold text-gray-500 dark:text-gray-400 transition-colors duration-300">2026학년도 1학기 국어과 프로젝트 수업</p>
+            </div>
+            <div class="text-sm font-bold text-gray-500 dark:text-gray-400 text-center md:text-right bg-white dark:bg-gray-900 px-6 py-4 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm transition-colors duration-300">
+                <p>담당 선생님: 국어과 ✨</p>
+                <p class="mt-1">우리 이번 학기도 재밌게 달려봐요! 화이팅! 🚀</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript Logic -->
+    <script>
+        // 1. Lucide 아이콘 렌더링
+        lucide.createIcons();
+
+        // 2. 부드러운 스크롤 (Smooth Scrolling)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 3. 검색 폼 제출 제어 (Search Form Handling)
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+
+        if (searchForm) {
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // 기본 폼 이동 방지
+                
+                const query = searchInput.value.trim();
+                if (!query) return;
+
+                // 로딩 상태 UI로 변경
+                const originalBtnContent = searchBtn.innerHTML;
+                searchBtn.innerHTML = '<span>검색 중... ⏳</span>';
+                searchBtn.classList.add('opacity-80', 'cursor-not-allowed');
+                searchBtn.style.pointerEvents = 'none';
+
+                // 0.6초 대기 후 이동 (실제 검색하는 듯한 연출)
+                setTimeout(() => {
+                    window.location.href = `./01/index.html?q=${encodeURIComponent(query)}`;
+                    
+                    // (뒤로가기로 돌아왔을 때를 대비해 버튼 상태 복구)
+                    setTimeout(() => {
+                        searchBtn.innerHTML = originalBtnContent;
+                        searchBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+                        searchBtn.style.pointerEvents = 'auto';
+                    }, 100);
+                }, 600);
+            });
+        }
+
+        // 4. 스크롤 애니메이션 (Intersection Observer)
+        // 화면에 카드가 나타날 때 스르륵 올라오는 효과
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target); // 한 번 보여준 후 관찰 해제
+                }
+            });
+        }, observerOptions);
+
+        // 애니메이션을 적용할 대상 초기화 및 관찰 시작
+        document.querySelectorAll('.bouncy-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            observer.observe(card);
+        });
+
+        // 5. 다크모드/라이트모드 토글 (Theme Toggle)
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // 초기 테마 설정 (로컬 스토리지 확인, 없으면 시스템 설정 확인)
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            htmlElement.classList.add('dark');
+            if (themeIcon) themeIcon.textContent = '☀️';
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark');
+                const isDark = htmlElement.classList.contains('dark');
+                
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
+            });
+        }
+    </script>
+</body>
+</html>
